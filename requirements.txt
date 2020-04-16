@@ -13,6 +13,7 @@ cycler==0.10.0
 Django==3.0.5
 Fiona==1.8.13.post1
 geopandas==0.7.0
+gunicorn
 idna==2.9
 kiwisolver==1.2.0
 lxml==4.5.0
