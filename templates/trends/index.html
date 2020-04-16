@@ -1,0 +1,20 @@
+{% extends 'trends/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <main>
+      <div class='border border-warning'>
+        <div class='text-center'>
+        <p class='text-warning'><b>Know Your Client Dashboard</b></p>
+        <form action="explore/" method="post">
+            {% csrf_token %}
+            {{ form.entity }}
+            <br>
+            <button type='submit' class='btn btn-dark btn-outline-warning'>Click to explore.</button>
+        </form>
+        </div>
+      </div>
+    </main>
+
+{% endblock %}

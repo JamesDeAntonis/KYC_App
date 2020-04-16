@@ -1,0 +1,21 @@
+{% extends 'trends/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- <link rel='stylesheet' href='{% static 'trends/trends.css'%}'> -->
+
+    <div class='container'>
+    <div class='text-center'>
+      <p class='text-warning'>Showing results for <b>{{ entity.name }}</b><br/></p>
+      <a class='btn btn-dark btn-outline-warning' href="/">Click to return to home.</a>
+    </div>
+    <!-- <div id='temp-graph' style='width:600px;height:250px;'></div> -->
+    <p>Let's take a look at the google search interest for {{ entity.name }} over the past several years.</p>
+    <div class="plot", style='width:1000;height:100;'>{{ plot|safe }}</div>
+    <p>We detect anomalies on the following dates: {{ entity.anomalies_formatted }}</p>
+    <p>Some urls on each date: {{ entity.urls }}</p>
+    </div>
+    <div class="dates"></div>
+  <script src='{% static 'js/trends.js'%}'></script>
+{% endblock %}

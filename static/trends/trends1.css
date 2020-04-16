@@ -1,0 +1,58 @@
+body {
+  background-color: black;
+  background-image: url('../images/space_1.jpeg');
+  background-size: cover;
+}
+/*
+main {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  resize: both;
+  overflow: auto;
+}
+
+main div {
+  padding: 40px;
+  border: 20px;
+  color: white;
+  resize: both;
+  overflow: auto;
+}
+
+html, body {
+  height: 100%;
+}
+*/
+p {
+  color: white;
+  margin: 20px;
+}
+
+/* .asdf {
+  color: white;
+}
+*/
+.text-warning {
+  font-size: 28px;
+}
+/*
+.title-area {
+  margin: 0;
+  border: 3px solid green;
+}
+
+.plot {
+  padding: 20px;
+  margin: 10px;
+  border-style: solid;
+  border-width: 0px;
+  border-color: teal;
+}
+
+.anomalies {
+  color: white;
+} */
