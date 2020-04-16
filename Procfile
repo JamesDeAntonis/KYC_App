@@ -1,1 +1,1 @@
-web: gunicorn mproject.wsgi
+web: gunicorn KYC.wsgi
