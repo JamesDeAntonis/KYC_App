@@ -3,7 +3,8 @@ from django.shortcuts import render
 import sys
 import os
 
-from .client.Capstone_KYC.client.client import Client
+# from .client.Capstone_KYC.client.client import Client
+from client.client import Client
 
 from .forms import homepage_form
 from django.http import HttpResponseRedirect
@@ -57,8 +58,8 @@ class Explore(TemplateView):
             anomalies = client.get_anomalies()
             print('getting the plot')
             plot = client.plot_interest_with_anomalies(plotly=True, as_var=True)
-            print('getting the urls')
-            urls = client.get_links()
+            # print('getting the urls')
+            # urls = client.get_links()
             print('rendering...')
             # plot = plotly.offline.plot(plot, auto_open=False, output_type='div')
             return render(request, self.template_name, {'entity': client, 'plot': plot})
