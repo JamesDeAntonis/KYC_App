@@ -18,16 +18,16 @@ kiwisolver==1.2.0
 lxml==4.5.0
 matplotlib==3.2.1
 # mkl-fft==1.0.15
-mkl-random==1.1.0
-mkl-service==2.3.0
-munch==2.5.0
-nilearn==0.5.2
+# mkl-random==1.1.0
+# mkl-service==2.3.0
+# munch==2.5.0
+# nilearn==0.5.2
 nltk==3.4.5
 numpy==1.18.1
 pandas==1.0.3
 plotly==4.6.0
-pyparsing==2.4.7
-pyproj==2.6.0
+# pyparsing==2.4.7
+# pyproj==2.6.0
 python-dateutil==2.8.1
 python-dotenv==0.12.0
 pytrends==4.7.2
