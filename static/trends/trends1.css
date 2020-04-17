@@ -3,7 +3,7 @@ body {
   background-image: url('../images/space_1.jpeg');
   background-size: cover;
 }
-/*
+
 main {
   height: 100%;
   width: 100%;
@@ -23,10 +23,12 @@ main div {
   overflow: auto;
 }
 
+
+
 html, body {
   height: 100%;
 }
-*/
+
 p {
   color: white;
   margin: 20px;
