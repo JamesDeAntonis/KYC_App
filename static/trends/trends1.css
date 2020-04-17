@@ -23,7 +23,11 @@ main div {
   overflow: auto;
 }
 
-
+.container {
+  padding: 40px;
+  margin: 40px;
+  justify-content: center;
+}
 
 html, body {
   height: 100%;
