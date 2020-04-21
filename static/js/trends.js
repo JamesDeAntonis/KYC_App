@@ -1,29 +1,25 @@
-// for date in [1, 2, 3]
+var supply_card = function(url, title, image_url) {
+  console.log('supplying card...')
+  $('.anomaly_cards').append(`
+          <div class='card' style='width: 18rem;'>
+            <img class='card-img-top' src=` + image_url + ` alt='Card image cap'>
+            <div class='card-body'>
+              <h5 class='card-title'>` + title + `</h5>
+              <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href=` + url + ` class='btn btn-primary'>See more</a>
+            </div>
+          </div>`);
+}
 
-// console.log('connected')
-//
-// var trace1 = {
-//   x: [1, 2, 3, 4],
-//   y: [10, 15, 13, 17],
-//   mode: 'markers'
-// };
-//
-// var trace2 = {
-//   x: [2, 3, 4, 5],
-//   y: [16, 5, 11, 9],
-//   mode: 'lines'
-// };
-//
-// var trace3 = {
-//   x: [1, 2, 3, 4],
-//   y: [12, 9, 15, 12],
-//   mode: 'lines+markers'
-// };
-//
-// var data = [ trace1, trace2, trace3 ];
-//
-// var layout = {
-//   title:'Line and Scatter Plot'
-// };
-//
-// Plotly.newPlot(document.getElementById('temp-graph'), data, layout);
+// jQuery.noConflict()(function ($) { // this was missing for me
+$(document).ready(function() {
+  console.log('document ready.')
+  for (var i = 0; i < anomalies.length; i++) {  // iterate through each anomaly
+    url_list = urls[i]  // url_list for this anomaly
+    for (var j = 0; j < url_list.length; j++) {  // iterate through each url in this anomaly
+        supply_card(url_list[j], 'title here', url_list[j])  // supply a card
+    }
+  }
+  console.log('touchdown');
+});
+// });

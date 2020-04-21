@@ -1,19 +1,18 @@
 from django.shortcuts import render
-# from trends.client.Capstone_KYC.client import *  # doubt this is right
+from django.http import HttpResponseRedirect
+from django.views.generic import TemplateView
+from django.views.generic.edit import FormView
+from django.utils.safestring import mark_safe
+
 import sys
 import os
 
-# from .client.Capstone_KYC.client.client import Client
 from client.client import Client
 
 from .forms import homepage_form
-from django.http import HttpResponseRedirect
 import pandas as pd
-from django.views.generic import TemplateView
-from django.views.generic.edit import FormView
-
-# import plotly
-# import plotly.express as px
+import jsonpickle
+import json
 
 
 # Create your views here.
@@ -31,15 +30,12 @@ class Index(FormView):
         print('ASDFADSF')
         pass
 
+class AboutUs(TemplateView):
+    template_name = 'trends/about_us.html'
+
 class Explore(TemplateView):
     template_name = 'trends/explore.html'
     form_class = homepage_form
-    # print(dir(form_class))
-    # print(form_class.cleaned_data)
-    # print(form.cleaned_data)
-    # cl = Client(entity)
-    # context['client'] = cl
-    # context['entity'] = entity
 
     def get(self, request, *args, **kwargs):
         print('get')
@@ -50,21 +46,29 @@ class Explore(TemplateView):
         print('posted')
         form = homepage_form(request.POST)
         if form.is_valid():
-            # <process form cleaned data>
-            entity = form.cleaned_data['entity']
-            print('getting the client')
-            client = Client(entity)
-            print('getting the anomalies')
-            anomalies = client.get_anomalies()
-            print('getting the plot')
-            plot = client.plot_interest_with_anomalies(plotly=True, as_var=True)
-            # print('getting the urls')
-            # urls = client.get_links()
             print('rendering...')
-            # plot = plotly.offline.plot(plot, auto_open=False, output_type='div')
-            return render(request, self.template_name, {'entity': client, 'plot': plot})
+            return render(request, self.template_name, context=self.get_context_data(form=form))
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context["post_user"] = self.post_user
-    #     return context
+    def get_context_data(self, form, **kwargs):
+        context = super().get_context_data(**kwargs)
+        entity = form.cleaned_data['entity']
+        context['name'] = entity
+
+        print('getting the client')
+        client = Client(entity)
+
+        print('getting the anomalies')
+        anomalies = client.get_anomalies()
+        context['anomalies'] = mark_safe(json.dumps([anomaly.strftime('%m/%d/%y') for anomaly in anomalies]))
+
+        print('getting the plot')
+        context['plot'] = client.plot_interest_with_anomalies(plotly=True, as_var=True)
+
+        print('getting the articles')
+        context['urls'] = mark_safe(json.dumps(list(client.get_links().values())))
+        # context['images'] = mark_safe(json.dumps(list(client.get_image().values())))
+        # articles = client.get_articles()
+        # context['titles'] = mark_safe(json.dumps(list(articles['titles'].values())))
+        # context['texts'] = mark_safe(json.dumps(list(articles['texts'].values())))
+
+        return context

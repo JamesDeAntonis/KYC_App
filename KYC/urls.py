@@ -22,4 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.Index.as_view(), name='home'),  # at root of website run this func
     path('explore/', views.Explore.as_view(), name='explore'),
+    # path('temp', views.temp, name='temp'),
+    path('about-us', views.AboutUs.as_view(), name='about-us'),
 ]

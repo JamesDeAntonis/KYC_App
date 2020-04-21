@@ -1,0 +1,21 @@
+{% extends 'trends/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{{apple}}
+
+<script src='{% static 'js/trends.js' %}'></script>
+<script>
+  var x = 'hi';
+  var app = {{ apple }};
+</script>
+<!-- var urls = '{{apple|escapejs}}'; -->
+
+<!-- <p>{{urls}}</p> -->
+
+<div id='all_dates'>
+
+</div>
+
+{% endblock %}

@@ -17,6 +17,7 @@ Fiona==1.8.13.post1
 geopandas==0.7.0
 gunicorn
 idna==2.9
+jsonpickle==1.4
 kiwisolver==1.2.0
 lxml==4.5.0
 matplotlib==3.2.1
