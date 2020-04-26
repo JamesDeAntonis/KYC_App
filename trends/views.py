@@ -7,7 +7,9 @@ from django.utils.safestring import mark_safe
 import sys
 import os
 
-from client.client import Client
+# from client.client import Client
+
+from huginn.huginn import Huginn
 
 from .forms import homepage_form
 import pandas as pd
@@ -16,6 +18,9 @@ import json
 
 
 # Create your views here.
+
+def temp(request):
+    return render(request, 'trends/temp.html')
 
 class Index(FormView):
     template_name = 'trends/index.html'
@@ -55,7 +60,7 @@ class Explore(TemplateView):
         context['name'] = entity
 
         print('getting the client')
-        client = Client(entity)
+        client = Huginn(entity)
 
         print('getting the anomalies')
         anomalies = client.get_anomalies()
@@ -65,10 +70,11 @@ class Explore(TemplateView):
         context['plot'] = client.plot_interest_with_anomalies(plotly=True, as_var=True)
 
         print('getting the articles')
-        context['urls'] = mark_safe(json.dumps(list(client.get_links().values())))
-        # context['images'] = mark_safe(json.dumps(list(client.get_image().values())))
-        # articles = client.get_articles()
-        # context['titles'] = mark_safe(json.dumps(list(articles['titles'].values())))
-        # context['texts'] = mark_safe(json.dumps(list(articles['texts'].values())))
+        client.get_info(num_links=1)
+        print(client.urls)
+        context['urls'] = mark_safe(json.dumps(list(client.urls.values())))
+        context['images'] = mark_safe(json.dumps(list(client.images.values())))
+        context['titles'] = mark_safe(json.dumps(list(client.titles.values())))
+        context['articles'] = mark_safe(json.dumps(list(client.articles.values())))
 
         return context

@@ -5,17 +5,51 @@
 
 {{apple}}
 
-<script src='{% static 'js/trends.js' %}'></script>
-<script>
-  var x = 'hi';
-  var app = {{ apple }};
-</script>
-<!-- var urls = '{{apple|escapejs}}'; -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet" />
 
-<!-- <p>{{urls}}</p> -->
+<main>
 
-<div id='all_dates'>
-
+  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+    <button type="button" class="btn btn-secondary" id=1>1</button>
+    <button type="button" class="btn btn-secondary" id=2>2</button>
+    <button type="button" class="btn btn-secondary" id=3>3</button>
+    <button type="button" class="btn btn-secondary" id=4>4</button>
+    <button type="button" class="btn btn-secondary" id=5>5</button>
+    <button type="button" class="btn btn-secondary" id=6>6</button>
+    <button type="button" class="btn btn-secondary" id=7>7</button>
+    <button type="button" class="btn btn-secondary" id=8>8</button>
+  </div>
 </div>
+  <div id="current_number"></div>
+  <div class="container-fluid">
+    <div id="row">
+
+      <div class="col-sm-4">
+
+        <div class="card">
+          <img class="card-img-top img-fluid" src="http://placehold.it/750x325" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+          <div class="card-block">
+            <a href="#" class="card-link">Card link</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script src='{% static 'js/temp.js'%}'></script>
+
+</main>
 
 {% endblock %}
