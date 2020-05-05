@@ -11,25 +11,28 @@
       var images = {{images}};
       var titles = {{titles}};
       var texts = {{articles}};
+      var summs = {{summaries}};
     </script>
 
-
     <div class='container'>
-      <div class='text-center'>
-        <p class='text-warning'>Showing results for <b>{{ name }}</b><br/></p>
-        <a class='btn btn-dark btn-outline-warning' href="/">Click to return to home.</a>
-      </div>
-      <p>Let's take a look at the google search interest for {{ name }} over the past several years.</p>
-      <div class="plot", style='width:1000;height:100;'>{{ plot|safe }}</div>
-      <p>We detect anomalies on the following dates.  Select a date to see some articles.</p>
-      <div class='text-center'>
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-          <div class="btn-group mr-2" id="anomaly-bar" role="group" aria-label="First group"></div>
+      <!-- <div class='border border-warning' margin=10px padding=10px> -->
+        <div class='text-center'>
+          <h1 class='text-warning'>Showing results for <b>{{ name }}</b><br/></h1>
+          <a class='btn btn-dark btn-outline-warning' href="/">Click to return to home.</a>
         </div>
-      </div><br>
-      <div class="container-fluid" margin=auto>
-        <div class="row" id="anomaly-cards"></div>
-      </div>
+        <p class='text-warning'>Let's take a look at the google search interest for {{ name }} over the past several years.</p>
+        <div class="plot", style='width:1000;height:100;'>{{ plot|safe }}</div>
+        <p class='text-warning'>We detect anomalies on the following dates.  Select a date to see some articles.</p>
+        <div class='text-center'>
+          <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" id="anomaly-bar" role="group" aria-label="First group"></div>
+          </div>
+        </div><br>
+        <p class='text-warning' id="summaries"></p>
+        <div class="container-fluid" margin=auto>
+          <div class="row" id="anomaly-cards"></div>
+        </div>
+      <!-- </div> -->
     </div>
 
     <script src='{% static 'js/trends.js'%}'></script>

@@ -32,6 +32,18 @@ var update_graph = function(i) {
   }
 }
 
+var supply_summary = function(i) {
+  console.log('supplying summaries for ' + anomalies[i]);
+  if (Object.keys(summs[1]).length === 0) {
+    $('#summaries').append('Some summaries of the different article clusters for this anomaly:' + '<br><br>')
+  }
+  for (var key in summs[i]) {
+    if (summs[i].hasOwnProperty(key)) {
+      $('#summaries').append(summs[i][key] + '<br><br>')
+    }
+  }
+}
+
 // jQuery.noConflict()(function ($) { // this was missing for me
 $(document).ready(function() {
   console.log('document ready.');
@@ -43,7 +55,9 @@ $(document).ready(function() {
   for (var i = 0; i < anomalies.length; i++) {
     document.getElementById(i).addEventListener("click", function(){
       $('#anomaly-cards').html('');
+      $('#summaries').html('');
       update_graph(this.id);
+      supply_summary(this.id);
       supply_all_cards_for_this_anomaly(this.id);
     });
   }

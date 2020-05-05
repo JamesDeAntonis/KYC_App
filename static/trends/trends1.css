@@ -39,12 +39,18 @@ main div {
   justify-content: center;
 }
 
+.card-img-top {
+    width: 99.9%;
+    height: 15vw;
+    object-fit: cover;
+}
+
 html, body {
   height: 100%;
 }
 
 p {
-  color: white;
+  /* color: white; */
   margin: 20px;
 }
 
@@ -56,8 +62,13 @@ ul, li {
   color: white;
 }
 */
-.text-warning {
+
+h1 {
   font-size: 28px;
+}
+
+.text-warning {
+  /* font-size: 28px; */
 }
 /*
 .title-area {

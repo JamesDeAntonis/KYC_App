@@ -6,6 +6,8 @@ from django.utils.safestring import mark_safe
 
 import sys
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # from client.client import Client
 
@@ -63,18 +65,22 @@ class Explore(TemplateView):
         client = Huginn(entity)
 
         print('getting the anomalies')
-        anomalies = client.get_anomalies()
+        anomalies = client.get_anomalies(k=10)
         context['anomalies'] = mark_safe(json.dumps([anomaly.strftime('%m/%d/%y') for anomaly in anomalies]))
 
         print('getting the plot')
-        context['plot'] = client.plot_interest_with_anomalies(plotly=True, as_var=True)
+        context['plot'] = client.plot_interest_with_anomalies(plotly=True)
 
         print('getting the articles')
-        client.get_info(num_links=1)
+        # NYT_API_KEY = os.getenv('NYT_API_KEY')
+        client.get_articles_info()
         print(client.urls)
         context['urls'] = mark_safe(json.dumps(list(client.urls.values())))
         context['images'] = mark_safe(json.dumps(list(client.images.values())))
         context['titles'] = mark_safe(json.dumps(list(client.titles.values())))
         context['articles'] = mark_safe(json.dumps(list(client.articles.values())))
+
+        client.get_local_summaries()
+        context['summaries'] = mark_safe(json.dumps(list(client.summary_by_anomalies_by_topics.values())))
 
         return context
