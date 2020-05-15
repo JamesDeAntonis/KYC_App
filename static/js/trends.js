@@ -55,9 +55,9 @@ $(document).ready(function() {
   for (var i = 0; i < anomalies.length; i++) {
     document.getElementById(i).addEventListener("click", function(){
       $('#anomaly-cards').html('');
-      $('#summaries').html('');
+      // $('#summaries').html('');
       update_graph(this.id);
-      supply_summary(this.id);
+      // supply_summary(this.id);
       supply_all_cards_for_this_anomaly(this.id);
     });
   }

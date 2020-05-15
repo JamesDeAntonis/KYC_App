@@ -23,12 +23,13 @@ colour==0.1.5
 cryptography==2.9.2
 cycler==0.10.0
 cymem==2.0.3
+dataclasses==0.7
 dj-database-url==0.5.0
 Django==3.0.5
 django-heroku==0.3.1
-django-phonenumber-field @ git+https://github.com/stefanfoulis/django-phonenumber-field.git@2c4bca9e02e36c825445e96c47fa41e2849fce91
+django-phonenumber-field==4.0.0
 docutils==0.15.2
-# en-core-web-md @ git+https://github.com/explosion/spacy-models/releases/download/en_core_web_md-2.0.0/en_core_web_md-2.0.0.tar.gz
+en==0.0.1
 en-core-web-sm==2.2.5
 filelock==3.0.12
 Fiona==1.8.13.post1
@@ -42,13 +43,15 @@ google-auth-oauthlib==0.4.1
 google-pasta==0.2.0
 grpcio==1.23.0
 h5py==2.10.0
-huginn==0.1.3
+# huginn==0.1.3
+git+git://github.com/tcausero/huginn.git
 idna==2.9
 importlib-metadata==1.6.0
 Jinja2==2.11.2
 jmespath==0.9.5
 joblib==0.14.1
 jsonpickle==1.4
+jsonschema==3.2.0
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.0
 kiwisolver==1.2.0
@@ -56,17 +59,15 @@ lxml==4.5.0
 Markdown==3.2.1
 MarkupSafe==1.1.1
 matplotlib==3.2.1
-mkl-fft==1.0.15
-mkl-random==1.1.0
-mkl-service==2.3.0
 mock==4.0.2
 more-itertools==8.2.0
 munch==2.5.0
 murmurhash==1.0.2
+nibabel==3.1.0
 nilearn==0.5.2
 nltk==3.4.5
 numexpr==2.7.1
-numpy==1.18.1
+numpy==1.18.4
 oauthlib==3.1.0
 olefile==0.46
 opt-einsum==3.2.1
@@ -87,6 +88,7 @@ pyLDAvis==2.1.2
 pyOpenSSL==19.1.0
 pyparsing==2.4.7
 pyproj==2.6.0
+pyrsistent==0.16.0
 PySocks==1.7.1
 pytest==5.4.1
 python-dateutil==2.8.1
@@ -116,11 +118,12 @@ tensorflow==1.15.2
 tensorflow-estimator==1.15.1
 termcolor==1.1.0
 thinc==7.4.0
+threadpoolctl==2.0.0
 tokenizer==2.0.5
 tokenizers==0.5.2
 torch==1.4.0
 torchvision==0.5.0
-tqdm==4.45.0
+tqdm==4.46.0
 transformers==2.6.0
 urllib3==1.25.9
 wasabi==0.6.0

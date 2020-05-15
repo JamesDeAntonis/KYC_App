@@ -62,10 +62,10 @@ class Explore(TemplateView):
         context['name'] = entity
 
         print('getting the client')
-        client = Huginn(entity)
+        client = Huginn(entity, mid=False)
 
         print('getting the anomalies')
-        anomalies = client.get_anomalies()  # (k=10)
+        anomalies = client.get_anomalies(k=3)
         context['anomalies'] = mark_safe(json.dumps([anomaly.strftime('%m/%d/%y') for anomaly in anomalies]))
 
         print('getting the plot')
@@ -80,7 +80,7 @@ class Explore(TemplateView):
         context['titles'] = mark_safe(json.dumps(list(client.titles.values())))
         context['articles'] = mark_safe(json.dumps(list(client.articles.values())))
 
-        client.get_local_summaries()
-        context['summaries'] = mark_safe(json.dumps(list(client.summary_by_anomalies_by_topics.values())))
+        # client.get_local_summaries()
+        # context['summaries'] = mark_safe(json.dumps(list(client.summary_by_anomalies_by_topics.values())))
 
         return context
