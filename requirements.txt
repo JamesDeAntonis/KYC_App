@@ -6,8 +6,8 @@ Babel==2.8.0
 beautifulsoup4==4.9.0
 blis==0.4.1
 boto==2.49.0
-boto3 @ file:///home/conda/feedstock_root/build_artifacts/boto3_1588627730692/work
-botocore @ file:///home/conda/feedstock_root/build_artifacts/botocore_1588622031498/work
+boto3==1.12.44
+botocore==1.15.49
 brotlipy==0.7.0
 bs4==0.0.1
 catalogue==1.0.0
@@ -106,7 +106,7 @@ tokenizer==2.0.5
 tokenizers==0.5.2
 torch==1.4.0
 torchvision==0.5.0
-tqdm @ file:///home/conda/feedstock_root/build_artifacts/tqdm_1588513834538/work
+tqdm==4.45.0
 transformers==2.6.0
 urllib3==1.25.9
 wasabi==0.6.0
