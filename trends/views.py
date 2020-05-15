@@ -65,7 +65,7 @@ class Explore(TemplateView):
         client = Huginn(entity)
 
         print('getting the anomalies')
-        anomalies = client.get_anomalies(k=10)
+        anomalies = client.get_anomalies()  # (k=10)
         context['anomalies'] = mark_safe(json.dumps([anomaly.strftime('%m/%d/%y') for anomaly in anomalies]))
 
         print('getting the plot')
