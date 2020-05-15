@@ -112,19 +112,19 @@ soupsieve==2.0
 spacy==2.2.4
 sqlparse==0.3.1
 srsly==1.0.2
-tensorboard==1.15.0
-tensorboard-plugin-wit==1.6.0.post3
-tensorflow==1.15.2
-tensorflow-estimator==1.15.1
+# tensorboard==1.15.0
+# tensorboard-plugin-wit==1.6.0.post3
+# tensorflow==1.15.2
+# tensorflow-estimator==1.15.1
 termcolor==1.1.0
 thinc==7.4.0
 threadpoolctl==2.0.0
-tokenizer==2.0.5
-tokenizers==0.5.2
-torch==1.4.0
-torchvision==0.5.0
+# tokenizer==2.0.5
+# tokenizers==0.5.2
+# torch==1.4.0
+# torchvision==0.5.0
 tqdm==4.46.0
-transformers==2.6.0
+# transformers==2.6.0
 urllib3==1.25.9
 wasabi==0.6.0
 wcwidth==0.1.9
