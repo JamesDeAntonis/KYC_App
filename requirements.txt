@@ -30,7 +30,7 @@ django-heroku==0.3.1
 django-phonenumber-field==4.0.0
 docutils==0.15.2
 en==0.0.1
-en-core-web-sm==2.2.5
+# en-core-web-sm==2.2.5
 filelock==3.0.12
 Fiona==1.8.13.post1
 funcy==1.14
